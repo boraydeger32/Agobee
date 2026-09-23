@@ -258,7 +258,7 @@ h1, h2, h3, .serif {
 }
 
 @media (max-width: 900px) {
-  .nav-toggle { display: grid; place-items: center; }
+  .nav-toggle { display: grid; place-items: center; order: 10; margin-left: auto; }
   .nav-links {
     position: fixed;
     inset: 0;
