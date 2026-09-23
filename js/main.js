@@ -14,15 +14,39 @@
   const toggle = document.querySelector(".nav-toggle");
   const links = document.querySelector(".nav-links");
   if (toggle && links) {
+    let lockY = 0;
+    const lockBody = () => {
+      lockY = window.scrollY;
+      document.body.style.position = "fixed";
+      document.body.style.top = -lockY + "px";
+      document.body.style.left = "0";
+      document.body.style.right = "0";
+      document.body.style.width = "100%";
+    };
+    const unlockBody = () => {
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.left = "";
+      document.body.style.right = "";
+      document.body.style.width = "";
+      window.scrollTo({ top: lockY, behavior: "instant" in window ? "instant" : "auto" });
+    };
     const close = () => {
+      if (!links.classList.contains("open")) return;
       links.classList.remove("open");
       toggle.setAttribute("aria-expanded", "false");
       toggle.textContent = "☰";
+      if (header) header.classList.remove("menu-open");
+      document.documentElement.classList.remove("nav-open");
+      unlockBody();
     };
     toggle.addEventListener("click", () => {
       const open = links.classList.toggle("open");
       toggle.setAttribute("aria-expanded", String(open));
       toggle.textContent = open ? "✕" : "☰";
+      if (header) header.classList.toggle("menu-open", open);
+      document.documentElement.classList.toggle("nav-open", open);
+      if (open) lockBody(); else unlockBody();
     });
     links.addEventListener("click", (e) => {
       if (e.target.closest("a")) close();
