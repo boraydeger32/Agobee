@@ -92,7 +92,7 @@
         `${data.get("message") || ""}`,
       ].join("\n");
       window.location.href =
-        "mailto:turksab.yonetim@gmail.com" +
+        "mailto:agobee.info@gmail.com" +
         "?subject=" + encodeURIComponent(subject) +
         "&body=" + encodeURIComponent(body);
       const note = document.querySelector("#form-status");
