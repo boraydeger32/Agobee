@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script>document.documentElement.setAttribute("data-theme",localStorage.getItem("agobee-theme")||"dark");document.documentElement.classList.add("agb-loading")</script>
+  <script>document.documentElement.setAttribute("data-theme",localStorage.getItem("agobee-theme")||"dark");document.documentElement.classList.add("agb-loading");if(location.pathname.endsWith("/index.html"))history.replaceState(null,"",location.pathname.slice(0,-10)+location.search+location.hash)</script>
   <title>Askeri Seri — AGOBEE Vücut Temizleme Mendili</title>
   <meta name="description" content="AGOBEE Askeri Seri: sahanın en zorlu koşulları için taktik sınıf antibakteriyel vücut temizleme mendili. Askeri birimler ve savunma tedariki için kurumsal çözümler.">
   <link rel="icon" type="image/png" href="../assets/logo-mark.png">
@@ -20,15 +20,15 @@
 
   <header class="site-header">
     <div class="container nav">
-      <a class="brand" href="../index.html" aria-label="AGOBEE ana sayfa">
+      <a class="brand" href="../" aria-label="AGOBEE ana sayfa">
         <img src="../assets/logo-mark.png" alt="" width="392" height="381">
         <span class="brand-name">AGOBEE</span>
       </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Menüyü aç">☰</button>
       <nav aria-label="Ana menü">
         <ul class="nav-links" id="nav-links">
-          <li><a href="../index.html">Ana Sayfa</a></li>
-          <li><a href="../index.html#seriler" aria-current="page">Ürün Serileri</a></li>
+          <li><a href="../">Ana Sayfa</a></li>
+          <li><a href="../#seriler" aria-current="page">Ürün Serileri</a></li>
           <li><a href="../otel-koleksiyonu.html">Otel Koleksiyonu</a></li>
           <li><a href="../hakkimizda.html">Hakkımızda</a></li>
           <li><a href="../iletisim.html">İletişim</a></li>
@@ -51,7 +51,7 @@
           <p>Çöl beji ambalajıyla tanınan bu seri, uzun operasyonlarda cilt sağlığını korumak için antibakteriyel formülle güçlendirilmiştir. Tek kullanımlık paketi cebe, hücuma ve ration paketine sığar; kokusu iz bırakmaz.</p>
           <div class="hero-ctas" style="justify-content:flex-start">
             <a class="btn" href="../iletisim.html">Teklif İsteyin</a>
-            <a class="btn ghost" href="../index.html#seriler">Tüm Seriler</a>
+            <a class="btn ghost" href="../#seriler">Tüm Seriler</a>
           </div>
         </div>
         <div class="sachet honeycomb" style="--sachet-bg:#5F6A41; --sachet-ink:#EADFB6; --sachet-line:rgba(234,223,182,.45)">
@@ -122,7 +122,7 @@
       <p class="tagline" style="font-size:11px; letter-spacing:.5em; text-indent:.5em; color:var(--ivory-dim)">Saf.&ensp;Doğal.</p>
       <nav aria-label="Alt menü">
         <ul class="footer-nav">
-          <li><a href="../index.html">Ana Sayfa</a></li>
+          <li><a href="../">Ana Sayfa</a></li>
           <li><a href="askeri.html">Askeri Seri</a></li>
           <li><a href="gunluk-yasam.html">Günlük Yaşam</a></li>
           <li><a href="saglik.html">Sağlık Kurumları</a></li>

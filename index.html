@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script>document.documentElement.setAttribute("data-theme",localStorage.getItem("agobee-theme")||"dark");document.documentElement.classList.add("agb-loading")</script>
+  <script>document.documentElement.setAttribute("data-theme",localStorage.getItem("agobee-theme")||"dark");document.documentElement.classList.add("agb-loading");if(location.pathname.endsWith("/index.html"))history.replaceState(null,"",location.pathname.slice(0,-10)+location.search+location.hash)</script>
   <title>AGOBEE — Saf. Doğal. | Premium Kişisel Bakım</title>
   <meta name="description" content="AGOBEE — antibakteriyel vücut temizleme mendilleri ve otel koleksiyonu. Askeri birimlerden beş yıldızlı otellere, saf ve doğal kişisel bakım.">
   <link rel="icon" type="image/png" href="assets/logo-mark.png">
-  <link rel="alternate" hreflang="tr" href="index.html">
-  <link rel="alternate" hreflang="en" href="en/index.html">
+  <link rel="alternate" hreflang="tr" href="./">
+  <link rel="alternate" hreflang="en" href="en/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
@@ -20,20 +20,20 @@
 
   <header class="site-header">
     <div class="container nav">
-      <a class="brand" href="index.html" aria-label="AGOBEE ana sayfa">
+      <a class="brand" href="./" aria-label="AGOBEE ana sayfa">
         <img src="assets/logo-mark.png" alt="" width="392" height="381">
         <span class="brand-name">AGOBEE</span>
       </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Menüyü aç">☰</button>
       <nav aria-label="Ana menü">
         <ul class="nav-links" id="nav-links">
-          <li><a href="index.html" aria-current="page">Ana Sayfa</a></li>
-          <li><a href="index.html#seriler">Ürün Serileri</a></li>
+          <li><a href="./" aria-current="page">Ana Sayfa</a></li>
+          <li><a href="./#seriler">Ürün Serileri</a></li>
           <li><a href="otel-koleksiyonu.html">Otel Koleksiyonu</a></li>
           <li><a href="hakkimizda.html">Hakkımızda</a></li>
           <li><a href="iletisim.html">İletişim</a></li>
           <li><button class="theme-toggle" type="button" aria-label="Temayı değiştir">◐</button></li>
-          <li><a class="lang" href="en/index.html" lang="en" hreflang="en" aria-label="English">EN</a></li>
+          <li><a class="lang" href="en/" lang="en" hreflang="en" aria-label="English">EN</a></li>
         </ul>
       </nav>
     </div>
@@ -243,7 +243,7 @@
       <p class="tagline" style="font-size:11px; letter-spacing:.5em; text-indent:.5em; color:var(--ivory-dim)">Saf.&ensp;Doğal.</p>
       <nav aria-label="Alt menü">
         <ul class="footer-nav">
-          <li><a href="index.html">Ana Sayfa</a></li>
+          <li><a href="./">Ana Sayfa</a></li>
           <li><a href="urunler/askeri.html">Askeri Seri</a></li>
           <li><a href="urunler/gunluk-yasam.html">Günlük Yaşam</a></li>
           <li><a href="urunler/saglik.html">Sağlık Kurumları</a></li>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script>document.documentElement.setAttribute("data-theme",localStorage.getItem("agobee-theme")||"dark");document.documentElement.classList.add("agb-loading")</script>
+  <script>document.documentElement.setAttribute("data-theme",localStorage.getItem("agobee-theme")||"dark");document.documentElement.classList.add("agb-loading");if(location.pathname.endsWith("/index.html"))history.replaceState(null,"",location.pathname.slice(0,-10)+location.search+location.hash)</script>
   <title>Mountaineers & Campers Line — AGOBEE Body Cleansing Wipe</title>
   <meta name="description" content="AGOBEE Outdoor Line: antibacterial wipes offering full-body cleansing in nature without water. Pure, natural care — even at the summit.">
   <link rel="icon" type="image/png" href="../../assets/logo-mark.png">
@@ -20,15 +20,15 @@
 
   <header class="site-header">
     <div class="container nav">
-      <a class="brand" href="../index.html" aria-label="AGOBEE home">
+      <a class="brand" href="../" aria-label="AGOBEE home">
         <img src="../../assets/logo-mark.png" alt="" width="392" height="381">
         <span class="brand-name">AGOBEE</span>
       </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">☰</button>
       <nav aria-label="Main menu">
         <ul class="nav-links" id="nav-links">
-          <li><a href="../index.html">Home</a></li>
-          <li><a href="../index.html#lines" aria-current="page">Product Lines</a></li>
+          <li><a href="../">Home</a></li>
+          <li><a href="../#lines" aria-current="page">Product Lines</a></li>
           <li><a href="../hotel-collection.html">Hotel Collection</a></li>
           <li><a href="../about.html">About</a></li>
           <li><a href="../contact.html">Contact</a></li>
@@ -51,7 +51,7 @@
           <p>In its deep forest-green packaging, this line protects your hygiene on routes that last for days, without taking up room in your pack. With its nature-minded approach, the only trace you leave behind is your footprint.</p>
           <div class="hero-ctas" style="justify-content:flex-start">
             <a class="btn" href="../contact.html">Request a Quote</a>
-            <a class="btn ghost" href="../index.html#lines">All Lines</a>
+            <a class="btn ghost" href="../#lines">All Lines</a>
           </div>
         </div>
         <div class="sachet honeycomb" style="--sachet-bg:#20402E; --sachet-ink:#C6A15B; --sachet-line:rgba(198,161,91,.4)">
@@ -122,7 +122,7 @@
       <p class="tagline" style="font-size:11px; letter-spacing:.5em; text-indent:.5em; color:var(--ivory-dim)">Pure.&ensp;Natural.</p>
       <nav aria-label="Footer menu">
         <ul class="footer-nav">
-          <li><a href="../index.html">Home</a></li>
+          <li><a href="../">Home</a></li>
           <li><a href="../products/military.html">Military Line</a></li>
           <li><a href="../products/daily-life.html">Daily Life</a></li>
           <li><a href="../products/healthcare.html">Healthcare</a></li>

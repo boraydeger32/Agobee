@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script>document.documentElement.setAttribute("data-theme",localStorage.getItem("agobee-theme")||"dark");document.documentElement.classList.add("agb-loading")</script>
+  <script>document.documentElement.setAttribute("data-theme",localStorage.getItem("agobee-theme")||"dark");document.documentElement.classList.add("agb-loading");if(location.pathname.endsWith("/index.html"))history.replaceState(null,"",location.pathname.slice(0,-10)+location.search+location.hash)</script>
   <title>About — AGOBEE</title>
   <meta name="description" content="The story of AGOBEE: a Turkish brand crafting pure, natural personal care with the diligence of a bee. Our values, quality approach and production philosophy.">
   <link rel="icon" type="image/png" href="../assets/logo-mark.png">
@@ -20,15 +20,15 @@
 
   <header class="site-header">
     <div class="container nav">
-      <a class="brand" href="index.html" aria-label="AGOBEE home">
+      <a class="brand" href="./" aria-label="AGOBEE home">
         <img src="../assets/logo-mark.png" alt="" width="392" height="381">
         <span class="brand-name">AGOBEE</span>
       </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">☰</button>
       <nav aria-label="Main menu">
         <ul class="nav-links" id="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="index.html#lines">Product Lines</a></li>
+          <li><a href="./">Home</a></li>
+          <li><a href="./#lines">Product Lines</a></li>
           <li><a href="hotel-collection.html">Hotel Collection</a></li>
           <li><a href="about.html" aria-current="page">About</a></li>
           <li><a href="contact.html">Contact</a></li>
@@ -109,7 +109,7 @@
       <p class="tagline" style="font-size:11px; letter-spacing:.5em; text-indent:.5em; color:var(--ivory-dim)">Pure.&ensp;Natural.</p>
       <nav aria-label="Footer menu">
         <ul class="footer-nav">
-          <li><a href="index.html">Home</a></li>
+          <li><a href="./">Home</a></li>
           <li><a href="products/military.html">Military Line</a></li>
           <li><a href="products/daily-life.html">Daily Life</a></li>
           <li><a href="products/healthcare.html">Healthcare</a></li>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script>document.documentElement.setAttribute("data-theme",localStorage.getItem("agobee-theme")||"dark");document.documentElement.classList.add("agb-loading")</script>
+  <script>document.documentElement.setAttribute("data-theme",localStorage.getItem("agobee-theme")||"dark");document.documentElement.classList.add("agb-loading");if(location.pathname.endsWith("/index.html"))history.replaceState(null,"",location.pathname.slice(0,-10)+location.search+location.hash)</script>
   <title>Otel Koleksiyonu — AGOBEE Hotel Collection</title>
   <meta name="description" content="AGOBEE Hotel Collection: beş yıldızlı oteller için şampuan, duş jeli ve saç kremi. 330 ml altın işlemeli şişeler, özel etiket (private label) seçenekleriyle.">
   <link rel="icon" type="image/png" href="assets/logo-mark.png">
@@ -20,15 +20,15 @@
 
   <header class="site-header">
     <div class="container nav">
-      <a class="brand" href="index.html" aria-label="AGOBEE ana sayfa">
+      <a class="brand" href="./" aria-label="AGOBEE ana sayfa">
         <img src="assets/logo-mark.png" alt="" width="392" height="381">
         <span class="brand-name">AGOBEE</span>
       </a>
       <button class="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Menüyü aç">☰</button>
       <nav aria-label="Ana menü">
         <ul class="nav-links" id="nav-links">
-          <li><a href="index.html">Ana Sayfa</a></li>
-          <li><a href="index.html#seriler">Ürün Serileri</a></li>
+          <li><a href="./">Ana Sayfa</a></li>
+          <li><a href="./#seriler">Ürün Serileri</a></li>
           <li><a href="otel-koleksiyonu.html" aria-current="page">Otel Koleksiyonu</a></li>
           <li><a href="hakkimizda.html">Hakkımızda</a></li>
           <li><a href="iletisim.html">İletişim</a></li>
@@ -125,7 +125,7 @@
       <p class="tagline" style="font-size:11px; letter-spacing:.5em; text-indent:.5em; color:var(--ivory-dim)">Saf.&ensp;Doğal.</p>
       <nav aria-label="Alt menü">
         <ul class="footer-nav">
-          <li><a href="index.html">Ana Sayfa</a></li>
+          <li><a href="./">Ana Sayfa</a></li>
           <li><a href="urunler/askeri.html">Askeri Seri</a></li>
           <li><a href="urunler/gunluk-yasam.html">Günlük Yaşam</a></li>
           <li><a href="urunler/saglik.html">Sağlık Kurumları</a></li>
