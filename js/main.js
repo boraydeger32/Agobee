@@ -452,26 +452,59 @@
 
   /* --- Cursor halo + magnetic hero CTA (fine pointers) --- */
   if (matchMedia("(pointer: fine)").matches) {
-    const ring = document.createElement("div");
-    ring.className = "agb-ring";
-    ring.setAttribute("aria-hidden", "true");
-    document.body.appendChild(ring);
-    let mx = -100, my = -100, rx = -100, ry = -100;
-    document.addEventListener("pointermove", (e) => {
-      mx = e.clientX; my = e.clientY;
-      ring.classList.add("show");
-      const hov = e.target.closest("a, button, .btn, .sachet, .product-photo");
-      ring.classList.toggle("hov", !!hov);
-    });
-    document.addEventListener("pointerleave", () => ring.classList.remove("show"));
-    const loop = () => {
-      rx += (mx - rx) * 0.16;
-      ry += (my - ry) * 0.16;
-      ring.style.left = rx + "px";
-      ring.style.top = ry + "px";
+    /* Bee cursor companion: the brand bee glides after the cursor,
+       banking into turns, hovering in place, dusting gold pollen. */
+    const brandImg = document.querySelector(".brand img");
+    if (brandImg) {
+      const bee = document.createElement("img");
+      bee.src = brandImg.src;
+      bee.className = "agb-bee";
+      bee.alt = "";
+      bee.setAttribute("aria-hidden", "true");
+      document.body.appendChild(bee);
+
+      let mx = -200, my = -200, bx = -200, by = -200;
+      let vx = 0, tBee = 0, lastPX = -200, lastPY = -200;
+
+      document.addEventListener("pointermove", (e) => {
+        mx = e.clientX; my = e.clientY;
+        bee.classList.add("show");
+        bee.classList.toggle("hov",
+          !!e.target.closest("a, button, .btn, .sachet, .product-photo"));
+      });
+      document.addEventListener("pointerleave", () => bee.classList.remove("show"));
+
+      const spawnPollen = () => {
+        const p = document.createElement("span");
+        p.className = "agb-pollen";
+        p.style.left = (bx + (Math.random() * 16 - 8)) + "px";
+        p.style.top = (by + 10 + Math.random() * 8) + "px";
+        document.body.appendChild(p);
+        setTimeout(() => p.remove(), 850);
+      };
+
+      const loop = () => {
+        tBee += 0.016;
+        const dx = mx + 18 - bx;
+        const dy = my + 14 - by;
+        bx += dx * 0.13;
+        by += dy * 0.13;
+        vx += (dx - vx) * 0.12;
+        const idle = Math.abs(dx) < 2 && Math.abs(dy) < 2;
+        const bob = idle ? Math.sin(tBee * 2.4) * 3.5 : 0;
+        const tilt = Math.max(-24, Math.min(24, vx * 0.8));
+        bee.style.left = bx + "px";
+        bee.style.top = (by + bob) + "px";
+        bee.style.transform = `rotate(${tilt.toFixed(1)}deg)`;
+        if (bee.classList.contains("show") &&
+            Math.hypot(bx - lastPX, by - lastPY) > 36) {
+          spawnPollen();
+          lastPX = bx; lastPY = by;
+        }
+        requestAnimationFrame(loop);
+      };
       requestAnimationFrame(loop);
-    };
-    requestAnimationFrame(loop);
+    }
 
     const mag = document.querySelector(".hero .hero-ctas .btn");
     if (mag) {

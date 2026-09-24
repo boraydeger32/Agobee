@@ -1332,3 +1332,41 @@ html.agb-loading { overflow: hidden; }
   .hero-ctas .btn { width: 100%; }
   .display { letter-spacing: 0.14em; text-indent: 0.14em; }
 }
+
+/* ---------- Bee cursor companion (replaces the plain ring) ---------- */
+.agb-ring { display: none !important; }
+.agb-bee {
+  position: fixed;
+  z-index: 500;
+  width: 30px;
+  height: auto;
+  pointer-events: none;
+  translate: -50% -50%;
+  opacity: 0;
+  transition: opacity 0.35s, width 0.25s var(--ease-lux), filter 0.3s;
+  filter: drop-shadow(0 2px 8px rgba(198, 161, 91, 0.45));
+  will-change: transform, left, top;
+}
+.agb-bee.show { opacity: 0.95; }
+.agb-bee.hov {
+  width: 42px;
+  filter: drop-shadow(0 2px 16px rgba(232, 206, 143, 0.85));
+}
+.agb-pollen {
+  position: fixed;
+  z-index: 499;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  pointer-events: none;
+  translate: -50% -50%;
+  background: radial-gradient(circle, #E8CE8F 0%, rgba(198, 161, 91, 0) 70%);
+  animation: pollenFade 0.8s ease-out forwards;
+}
+:root[data-theme="light"] .agb-pollen {
+  background: radial-gradient(circle, #8F6B22 0%, rgba(143, 107, 34, 0) 70%);
+}
+@keyframes pollenFade {
+  from { opacity: 0.9; scale: 1; }
+  to { opacity: 0; scale: 0.2; margin-top: 16px; }
+}
